@@ -1,7 +1,7 @@
 import axios from 'axios';
 import getAuth from './auth';
 
-// ENV Variables
+// ENV Variabsles
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
 const instance = axios.create({

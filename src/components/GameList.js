@@ -1,5 +1,5 @@
 import '../CSS_Files/GameList.css';
-// import Skeleton from 'react-loading-skeleton'
+// import Skeleton from 'react -loading-skeleton'
 
 const GameList = ({ title, gameArray }) => {
   const Games = gameArray.map((game) => {

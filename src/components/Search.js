@@ -34,7 +34,7 @@ const Search = () => {
       clearTimeout(timeoutID);
     };
   }, [term]);
-  ///End of UseEffect
+  ///End of  UseEffect
 
   return (
     <div>

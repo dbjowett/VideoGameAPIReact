@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Component imports
+// Component import s
 import Header from './header';
 import Search from './Search';
 import GameContainer from './GameContainer';
