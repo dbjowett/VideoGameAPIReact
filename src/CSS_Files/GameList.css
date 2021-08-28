@@ -1,0 +1,115 @@
+.gameContainerTitle h1{
+    font-size: 1.5rem;
+    padding-bottom: 4px;
+}
+
+.gameContainerTitle {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.line {
+    border-radius: 20px;
+}
+
+
+
+/* Game Container Start  */
+.gameContainer {
+    margin-top: 40px;
+    padding: 0 40px; 
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(400px, auto);
+    grid-gap: 40px 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+.gameItem {
+    width: 260px;
+    height: 400px; 
+    padding: 10px;
+    background-color: #13181f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.017),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.022),
+        0 12.5px 10px rgba(0, 0, 0, 0.027)
+    ;   
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 10px 10px 20px 10px;
+    /* border: 1px solid orange; */
+}
+
+.gamePhoto{
+    width: 250px;
+    height: 250px;
+    margin-top: 5px;
+    object-fit: cover;
+    overflow: auto;
+    border-radius: 10px;
+    /* border: 1px solid blue; */
+}
+
+.gameDesc {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.summary {
+    padding: 0px 10px 10px 10px;
+}
+
+.releaseDate {
+    background-color: #A93F55;
+    border-radius: 3px;
+    margin-top: 4px;
+    padding: 3px;
+    left: 230px;
+    top: 10px;
+    width: 40px;
+    /* width: 63px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: absolute;
+}
+
+@media (max-width: 950px) {
+    /* Below 1280px (medium) */
+    .gameContainer {
+        margin-top: 0px;
+        padding: 50px; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        justify-items: center;
+        align-items: center;
+    }
+    .gameItem{
+        margin-bottom: 25px;
+    }
+
+    .gameDesc {
+        max-width: 350px;
+    }
+}
