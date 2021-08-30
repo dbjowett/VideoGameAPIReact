@@ -51,7 +51,7 @@ const Search = () => {
           </a>
         </form>
       </div>
-      <GameList title='Search Results' gameArray={results} />
+      <GameList title='' gameArray={results} />
     </div>
   );
 };

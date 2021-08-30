@@ -4,14 +4,14 @@ import GameList from './GameList';
 
 const oneWeek = 604800;
 const timeNow = Math.floor(Date.now() / 1000);
-
+console.log(`Now: ${timeNow}... Time in one week ${timeNow + oneWeek}`);
 const Upcoming = () => {
   const [games, setGames] = useState([]);
 
   const options = {
     method: 'POST',
     data: `
-          fields name, release_dates.human, summary, cover.*; where platforms= (48,49,130) & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${
+          fields name, release_dates.*, summary, cover.*; where platforms= (48,49,130) & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${
       timeNow + oneWeek
     }; sort first_release_date asc; limit 100;
               `,

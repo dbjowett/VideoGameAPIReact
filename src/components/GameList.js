@@ -7,10 +7,19 @@ const GameList = ({ title, gameArray }) => {
       ? game.cover.url.replace('t_thumb', 't_cover_big')
       : 'https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';
 
+    const timeNow = Math.floor(Date.now() / 1000);
+    const dates = game.release_dates.map((rd) => {
+      // let multi = rd.date * 1000;
+      console.log(rd.date - timeNow);
+      return new Date(rd.date * 1000);
+    });
+
+    console.log(dates[0]);
+
     const release = game.release_dates[0].human
       ? game.release_dates[0].human.split(',')[0]
       : 'Hello';
-
+    console.log('//////////////////////NEW game');
     return (
       <div key={game.id} className='gameItem'>
         <img className='gamePhoto' src={cover} alt={game.name} />
