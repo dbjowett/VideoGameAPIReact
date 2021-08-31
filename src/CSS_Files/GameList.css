@@ -54,7 +54,7 @@ h3 {
     margin: 0;
     padding: 10px 10px 20px 10px;
     width: 75%;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
 
 .gamePhoto{
@@ -72,25 +72,29 @@ h3 {
     height: auto;
     font-size: 10px;
     position: relative;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .summary {
     padding: 0px 10px 10px 10px;
     color: rgba(255, 255, 255, 0.568);
+    width: 75%; 
 }
 
-.releaseDate {
-    background-color: #b9334e;
-    border-radius: 3px;
+.gameInfoBox {
     margin-top: 4px;
     font-size: 9px;
     text-align: center;
-    padding: 3px;
-    left: 220px;
-    top: 10px;
+    left: 222px;
+    top: -2px;
     width: 34px;
     position: absolute;
+}
+.gameInfoBox div {
+    border-radius: 2px;
+    padding: 2px;
+    background-color: #b9334e;
+    margin-top: 3px;
 }
 
 @media (max-width: 950px) {
