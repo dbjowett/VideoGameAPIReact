@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import igdb from '../api/igdb';
-import GameList from './GameList';
+import SearchedGameList from './SearchedGameList';
 
 const Search = () => {
   const [term, setSearch] = useState('');
@@ -8,7 +8,7 @@ const Search = () => {
 
   const options = {
     method: 'POST',
-    data: `search "${term}"; fields name, summary, cover.*; limit 20;`,
+    data: `search "${term}"; fields name, first_release_date, total_rating, summary, category, cover.url; limit 20;`,
     url: '/v4/games/',
   };
 
@@ -51,7 +51,7 @@ const Search = () => {
           </a>
         </form>
       </div>
-      <GameList title='' gameArray={results} />
+      <SearchedGameList title='' gameArray={results} />
     </div>
   );
 };

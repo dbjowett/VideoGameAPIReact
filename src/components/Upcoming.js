@@ -1,10 +1,9 @@
 import igdb from '../api/igdb';
 import React, { useState, useEffect } from 'react';
-import GameList from './GameList';
+import UpcomingGameList from './UpcomingGameList';
 
 const oneWeek = 604800;
 const timeNow = Math.floor(Date.now() / 1000);
-console.log(`Now: ${timeNow}... Time in one week ${timeNow + oneWeek}`);
 const Upcoming = () => {
   const [games, setGames] = useState([]);
 
@@ -19,14 +18,13 @@ const Upcoming = () => {
   };
   useEffect(() => {
     igdb(options).then((res) => {
-      console.log(res.data);
       setGames(res.data);
     });
   }, []);
 
   return (
     <div>
-      <GameList title='Upcoming' gameArray={games} />
+      <UpcomingGameList title='Upcoming' gameArray={games} />
     </div>
   );
 };

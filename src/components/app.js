@@ -13,7 +13,7 @@ class App extends React.Component {
       <div className='body'>
         <Header />
         <Search />
-        <Upcoming />
+        {/* <Upcoming /> */}
         {/* <GameContainer /> */}
         <Footer />
       </div>
