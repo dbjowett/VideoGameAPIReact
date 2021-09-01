@@ -4,12 +4,10 @@ import '../CSS_Files/GameList.css';
 const SearchedGameList = ({ title, gameArray}) => {
   
   const filteredGameList = gameArray.filter((game)=>{
-    console.log(game.category)
     return game.category === 0||1||2||3||4;
   })
 
   const Games = filteredGameList.map((game) => {
-    console.log(game);
     const release = new Date(game.first_release_date*1000);
     const releaseYear = release.getFullYear();
     

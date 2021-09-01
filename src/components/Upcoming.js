@@ -24,7 +24,7 @@ const Upcoming = () => {
 
   return (
     <div>
-      <UpcomingGameList title='Upcoming' gameArray={games} />
+      <UpcomingGameList title='Upcoming (7 days)' gameArray={games} />
     </div>
   );
 };

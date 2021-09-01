@@ -29,8 +29,10 @@ const UpcomingGameList = ({ title, gameArray}) => {
             {game.summary ? game.summary.slice(0, 137) : 'No summary available'}
             ...
           </div>
-          <div className='releaseDate'>
-            {releaseDate}
+          <div className="gameInfoBox">
+            <div className='releaseDate'>{releaseDate}</div>
+            {/* <div className='releaseDate'>{}96%</div>
+            <div className='releaseDate'>{}RPG</div> */}
           </div>
         </div>
       </div>

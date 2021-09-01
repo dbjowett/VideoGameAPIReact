@@ -5,6 +5,7 @@ import SearchedGameList from './SearchedGameList';
 const Search = () => {
   const [term, setSearch] = useState('');
   const [results, setResult] = useState([]);
+  const [visible, setVisible] = useState(true);
 
   const options = {
     method: 'POST',
@@ -14,6 +15,8 @@ const Search = () => {
 
   /// Start of UseEffect
   useEffect(() => {
+    results.length> 0 ? setVisible(true): setVisible(false)
+
     const search = async () => {
       const { data } = await igdb(options);
       setResult(data);
@@ -27,7 +30,7 @@ const Search = () => {
         if (term) {
           search();
         }
-      }, 1000);
+      }, 500);
     }
 
     return () => {
@@ -51,7 +54,7 @@ const Search = () => {
           </a>
         </form>
       </div>
-      <SearchedGameList title='' gameArray={results} />
+      {visible ? <SearchedGameList title='Search' gameArray={results}/> : null }
     </div>
   );
 };
