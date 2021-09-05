@@ -10,7 +10,7 @@ const Upcoming = () => {
   const options = {
     method: 'POST',
     data: `
-          fields name, release_dates.*, summary, cover.*; where platforms= (48,49,130) & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${
+          fields name, release_dates.*, summary, cover.*; where platforms= (6,48,49,130, 169,167) & category = 0 & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${
       timeNow + oneWeek
     }; sort first_release_date asc; limit 100;
               `,
@@ -18,7 +18,8 @@ const Upcoming = () => {
   };
   useEffect(() => {
     igdb(options).then((res) => {
-      setGames(res.data);
+      const filteredList = res.data.filter((game) => game.cover !== undefined);
+      setGames(filteredList);
     });
   }, []);
 

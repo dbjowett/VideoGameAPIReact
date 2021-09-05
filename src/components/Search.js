@@ -9,20 +9,22 @@ const Search = () => {
 
   const options = {
     method: 'POST',
-    data: `search "${term}"; fields name, first_release_date, total_rating, summary, category, cover.url; limit 20;`,
+    data: `search "${term}"; fields name, first_release_date, total_rating, summary, category, cover.url; where rating != null & category = 0;  limit 20;`,
     url: '/v4/games/',
   };
 
   /// Start of UseEffect
   useEffect(() => {
-    results.length> 0 ? setVisible(true): setVisible(false)
+    term.length && results.length > 0 ? setVisible(true) : setVisible(false);
 
     const search = async () => {
       const { data } = await igdb(options);
+      
       setResult(data);
     };
 
     let timeoutID = 0;
+
     if (term && !results.length) {
       search();
     } else {
@@ -30,7 +32,7 @@ const Search = () => {
         if (term) {
           search();
         }
-      }, 500);
+      }, 100);
     }
 
     return () => {
@@ -42,7 +44,12 @@ const Search = () => {
   return (
     <div>
       <div>
-        <form className='searchBox'>
+        <form
+          className='searchBox'
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSearch(term);}}
+          >
           <input
             type='text'
             placeholder='Search for games..'
@@ -54,7 +61,7 @@ const Search = () => {
           </a>
         </form>
       </div>
-      {visible ? <SearchedGameList title='Search' gameArray={results}/> : null }
+      {visible ? <SearchedGameList title='Search' gameArray={results} /> : null}
     </div>
   );
 };

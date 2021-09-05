@@ -87,20 +87,19 @@ h3 {
     margin-top: 4px;
     font-size: 9px;
     text-align: center;
-    left: 222px;
+    left: 213px;
     top: -2px;
-    width: 34px;
+    width: 40px;
     position: absolute;
 }
 .gameInfoBox div {
     border-radius: 2px;
-    padding: 2px;
+    padding: 3px;
     background-color: #b9334e;
     margin-top: 3px;
 }
 
 @media (max-width: 950px) {
-    /* Below 1280px (medium) */
     .gameContainer {
         margin-top: 0px;
         padding: 50px; 
@@ -116,5 +115,16 @@ h3 {
 
     .gameDesc {
         max-width: 350px;
+    }
+}
+@media (max-width: 675px){
+    .gameContainer {
+        margin-top: 0px;
+        padding: 50px; 
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
+        justify-items: center;
+        align-items: center;
     }
 }

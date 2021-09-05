@@ -2,12 +2,8 @@ import '../CSS_Files/GameList.css';
 // import Skeleton from 'react -loading-skeleton'
 
 const SearchedGameList = ({ title, gameArray}) => {
-  
-  const filteredGameList = gameArray.filter((game)=>{
-    return game.category === 0||1||2||3||4;
-  })
 
-  const Games = filteredGameList.map((game) => {
+  const Games = gameArray.map((game) => {
     const release = new Date(game.first_release_date*1000);
     const releaseYear = release.getFullYear();
     
@@ -25,7 +21,7 @@ const SearchedGameList = ({ title, gameArray}) => {
           </div>
           <div className="gameInfoBox">
             <div className='releaseDate'>{releaseYear}</div>
-            <div className='releaseDate'>{}96%</div>
+            <div className='releaseDate'>{Math.round(game.total_rating)}%</div>
             <div className='releaseDate'>{}RPG</div>
           </div>
         </div>

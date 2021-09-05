@@ -1,7 +1,7 @@
 import axios from 'axios';
 import getAuth from './auth';
 
-// ENV Variabsles
+// ENV Variables
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
 const instance = axios.create({
@@ -13,7 +13,6 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   async (config) => {
-    // console.log('Interceptors firing!!');
     const token = await getAuth();
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;

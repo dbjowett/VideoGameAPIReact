@@ -3,6 +3,7 @@ import '../CSS_Files/GameList.css';
 
 const UpcomingGameList = ({ title, gameArray}) => {
   const Games = gameArray.map((game) => {
+    console.log(game);
     const cover = game.cover
       ? game.cover.url.replace('t_thumb', 't_cover_big')
       : 'https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg';
@@ -15,8 +16,10 @@ const UpcomingGameList = ({ title, gameArray}) => {
           return 'Today'
         }else if(diffInDays === 1){
           return `${diffInDays} Day`
-        } else {
+        } else if (diffInDays < 8){
           return `${diffInDays} Days`
+        } else {
+          return `Err`
         }
     })();
 
