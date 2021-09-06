@@ -14,7 +14,7 @@ const Upcoming = () => {
       timeNow + oneWeek
     }; sort first_release_date asc; limit 100;
               `,
-    url: '/v4/games/',
+    url: 'https://api.igdb.com/v4/games/',
   };
   useEffect(() => {
     igdb(options).then((res) => {
@@ -31,3 +31,5 @@ const Upcoming = () => {
 };
 
 export default Upcoming;
+
+// "proxy": "https://api.igdb.com",
