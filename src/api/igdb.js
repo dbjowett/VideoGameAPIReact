@@ -8,6 +8,7 @@ const instance = axios.create({
   headers: {
     Accept: 'application/json',
     'Client-ID': clientId,
+    'Access-Control-Allow-Origin': '*'
   },
 });
 

@@ -10,7 +10,7 @@ const Search = () => {
   const options = {
     method: 'POST',
     data: `search "${term}"; fields name, first_release_date, total_rating, summary, category, cover.url; where rating != null & category = 0;  limit 20;`,
-    url: 'https://api.igdb.com/v4/games/',
+    url: '/v4/games/',
   };
 
   /// Start of UseEffect
