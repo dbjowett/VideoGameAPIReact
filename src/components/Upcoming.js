@@ -10,9 +10,7 @@ const Upcoming = () => {
   const options = {
     method: 'POST',
     data: `
-          fields name, release_dates.*, summary, cover.*; where platforms= (6,48,49,130, 169,167) & category = 0 & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${
-      timeNow + oneWeek
-    }; sort first_release_date asc; limit 100;
+          fields name, release_dates.*, summary, cover.*; where platforms= (6,48,49,130, 169,167) & cover != null &category = 0 & first_release_date != n & first_release_date >${timeNow} & first_release_date < ${timeNow + oneWeek}; sort first_release_date asc; limit 100;
               `,
     url: 'https://api.igdb.com/v4/games/',
   };
